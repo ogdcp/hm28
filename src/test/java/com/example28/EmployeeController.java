@@ -7,7 +7,7 @@ import java.util.ArrayList;
 @RestController
 
 @RequestMapping("/departments")
-public class EmployeeController implements EmployeeService {
+public abstract class EmployeeController implements EmployeeService {
 
 
     private final EmployeeServiceImpl employeeService;
@@ -27,14 +27,14 @@ public class EmployeeController implements EmployeeService {
         return employeeService.maxSalary(departmentId);
     }
 
-    @GetMapping("/departmentsAll")
+    @GetMapping(value = "/аll", params = "departmentId")
     @Override
     public ArrayList<Employee> departmentsAll(@RequestParam("departmentId") int departmentId) {
         return employeeService.departmentsAll(departmentId);
     }
-    @GetMapping("/All")
+    @GetMapping("/all")
     @Override
-    public ArrayList<Employee> All() {
+    public ArrayList<Employee> all() {
         return employeeService.All();
     }
 }

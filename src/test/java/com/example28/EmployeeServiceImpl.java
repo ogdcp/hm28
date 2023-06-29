@@ -5,10 +5,13 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.groupingBy;
+
 @Service
-public class EmployeeServiceImpl implements EmployeeService {
+public abstract class EmployeeServiceImpl implements EmployeeService {
     List<Employee> staff = new ArrayList<>(List.of(
             new Employee("Максимов", "Данила", 60_000, 2),
             new Employee("Григорьев", "Олег", 50_000, 4),
@@ -42,8 +45,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public ArrayList<Employee> All() {
-        return (ArrayList<Employee>) staff;
+    public Map<Integer, List<Employee>> All() {
+        return staff
+                .stream()
+                .collect(groupingBy(Employee::getDepartment));
     }
 
 }
