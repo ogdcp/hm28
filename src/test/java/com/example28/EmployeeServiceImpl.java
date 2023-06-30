@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import static java.util.stream.Collectors.groupingBy;
 
 @Service
-public abstract class EmployeeServiceImpl implements EmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {
     List<Employee> staff = new ArrayList<>(List.of(
             new Employee("Максимов", "Данила", 60_000, 2),
             new Employee("Григорьев", "Олег", 50_000, 4),

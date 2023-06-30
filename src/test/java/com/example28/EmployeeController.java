@@ -7,11 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-
 @RequestMapping("/departments")
-public abstract class EmployeeController implements EmployeeService {
-
-
+public class EmployeeController implements EmployeeService {
     private final EmployeeServiceImpl employeeService;
     public EmployeeController(EmployeeServiceImpl employeeService) {
         this.employeeService = employeeService;
