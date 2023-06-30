@@ -45,7 +45,7 @@ public abstract class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Map<Integer, List<Employee>> All() {
+    public Map<Integer, List<Employee>> all() {
         return staff
                 .stream()
                 .collect(groupingBy(Employee::getDepartment));

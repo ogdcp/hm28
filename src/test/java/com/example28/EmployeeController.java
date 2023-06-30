@@ -3,6 +3,8 @@ package com.example28;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 
@@ -34,7 +36,7 @@ public abstract class EmployeeController implements EmployeeService {
     }
     @GetMapping("/all")
     @Override
-    public ArrayList<Employee> all() {
-        return employeeService.All();
+    public Map<Integer, List<Employee>> all() {
+        return employeeService.all();
     }
 }
