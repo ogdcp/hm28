@@ -1,5 +1,4 @@
 package com.example28;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -8,11 +7,16 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/departments")
-public class EmployeeController implements EmployeeService {
+public class  EmployeeControllerImplements EmployeeService {
     private final EmployeeServiceImpl employeeService;
     public EmployeeController(EmployeeServiceImpl employeeService) {
         this.employeeService = employeeService;
     }
+
+    public EmployeeControllerImplements(EmployeeServiceImpl employeeService) {
+        this.employeeService = employeeService;
+    }
+
     @GetMapping("/min-salary")
     @Override
     public Employee minimumSalary(@RequestParam("departmentId") int departmentId) {
