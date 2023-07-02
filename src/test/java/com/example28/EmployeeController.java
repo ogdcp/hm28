@@ -7,15 +7,13 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/departments")
-public class  EmployeeControllerImplements EmployeeService {
+public class EmployeeController implements EmployeeService {
     private final EmployeeServiceImpl employeeService;
     public EmployeeController(EmployeeServiceImpl employeeService) {
         this.employeeService = employeeService;
     }
 
-    public EmployeeControllerImplements(EmployeeServiceImpl employeeService) {
-        this.employeeService = employeeService;
-    }
+
 
     @GetMapping("/min-salary")
     @Override
