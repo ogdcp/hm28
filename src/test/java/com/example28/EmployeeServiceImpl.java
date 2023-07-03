@@ -45,6 +45,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public Map<Integer, List<Employee>> All() {
+        return null;
+    }
+
+    @Override
     public Map<Integer, List<Employee>> all() {
         return staff
                 .stream()

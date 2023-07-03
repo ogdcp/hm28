@@ -7,7 +7,8 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/departments")
-public class EmployeeController implements EmployeeService {
+public class EmployeeController {
+
     private final EmployeeServiceImpl employeeService;
     public EmployeeController(EmployeeServiceImpl employeeService) {
         this.employeeService = employeeService;
@@ -33,6 +34,12 @@ public class EmployeeController implements EmployeeService {
     public ArrayList<Employee> departmentsAll(@RequestParam("departmentId") int departmentId) {
         return employeeService.departmentsAll(departmentId);
     }
+
+    @Override
+    public Map<Integer, List<Employee>> All() {
+        return null;
+    }
+
     @GetMapping("/all")
     @Override
     public Map<Integer, List<Employee>> all() {
