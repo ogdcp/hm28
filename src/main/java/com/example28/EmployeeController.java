@@ -20,17 +20,17 @@ public class EmployeeController {
     public Employee addPerson(@RequestParam String firstName,
                               @RequestParam String lastName,
                               @RequestParam int salary,
-                              @RequestParam int department) {
+                              @RequestParam int department) throws EmployeeAlreadyAddedException, EmployeeStorageIsFullException {
         return employeeService.addPerson(firstName, lastName, salary, department);
     }
 
     @GetMapping(path = "/get")
-    public Employee findPerson(@RequestParam String firstName, @RequestParam String lastName) {
+    public Employee findPerson(@RequestParam String firstName, @RequestParam String lastName) throws EmployeeNotFoundException {
         return employeeService.findPerson(firstName, lastName);
     }
 
     @GetMapping(path = "/remove")
-    public Employee deletePerson(@RequestParam String firstName, @RequestParam String lastName) {
+    public Employee deletePerson(@RequestParam String firstName, @RequestParam String lastName) throws EmployeeNotFoundException {
         return employeeService.deletePerson(firstName, lastName);
     }
 
