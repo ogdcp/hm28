@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.groupingBy;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 class DepartmentServiceImplTest {
@@ -32,7 +32,7 @@ class DepartmentServiceImplTest {
         staff.add(employee4);
         EmployeeService employeeService = Mockito.mock(EmployeeService.class);
         when(employeeService.showAllPersons()).thenReturn(staff);
-        departmentService = new DepartmentServiceImpl((EmployeeServiceImpl) employeeService);
+        departmentService = new DepartmentServiceImpl(employeeService);
     }
     @Test
     void showAllDepartmot() {
