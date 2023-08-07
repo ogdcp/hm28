@@ -14,5 +14,5 @@ public interface DepartmentService {
 
     int sumSalary(int departmentId);
 
-    ArrayList<Employee> listOfDepartment(int departmentId);
+    List<Employee> listOfDepartment(int departmentId);
 }

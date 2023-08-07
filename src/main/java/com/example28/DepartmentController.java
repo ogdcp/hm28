@@ -23,8 +23,8 @@ public class DepartmentController {
         return departmentService.showAllDepartmot();
     }
     @GetMapping("/{id}/employees")
-    public ArrayList<Employee> getDepartmentId(@PathVariable int id) {
-        return departmentService.listOfDepartment(id);
+    public List<Employee> getDepartmentId(@PathVariable int id) {
+        return (List<Employee>) departmentService.listOfDepartment(id);
     }
     @GetMapping("/{id}/salary/max")
     public Employee maxSalary(@PathVariable int id) {

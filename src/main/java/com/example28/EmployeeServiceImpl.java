@@ -31,11 +31,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee deletePerson(String name, String lastName) throws EmployeeNotFoundException {
-        List<Employee> employees = new ArrayList<>();
         for(Employee i : staff){
             if((i.getName().equals(name)) && (i.getLastName().equals(lastName))){
-                employees.remove(i);
-                return (Employee) employees;
+                staff.remove(i);
+                return i;
             }
         }
         throw new EmployeeNotFoundException("Такого сотрудника нет");
@@ -43,11 +42,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee findPerson(String name, String lastName) throws EmployeeNotFoundException {
-        List<Employee> employees = new ArrayList<>();
         for(Employee i : staff){
             if((i.getName().equals(name)) && (i.getLastName().equals(lastName))){
-                employees.add(i);
-                return (Employee) employees;
+                return i;
             }
         }
         throw new EmployeeNotFoundException("Такого сотрудника нет");
